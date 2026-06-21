@@ -8,8 +8,8 @@ resource "azurerm_windows_web_app" "this" {
   tags       = var.tags
 
   site_config {
-    always_on                         = true
-    scm_ip_restriction_default_action = "Deny"
+    always_on                     = true
+    ip_restriction_default_action = "Deny"
 
     dynamic "ip_restriction" {
       for_each = var.access_restrictions
