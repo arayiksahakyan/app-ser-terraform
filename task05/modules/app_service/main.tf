@@ -4,12 +4,11 @@ resource "azurerm_windows_web_app" "this" {
   resource_group_name = var.resource_group_name
   service_plan_id     = var.service_plan_id
 
-  https_only = true
+  https_only = false
   tags       = var.tags
 
   site_config {
     always_on                         = true
-    ip_restriction_default_action     = "Deny"
     scm_ip_restriction_default_action = "Deny"
 
     dynamic "ip_restriction" {
